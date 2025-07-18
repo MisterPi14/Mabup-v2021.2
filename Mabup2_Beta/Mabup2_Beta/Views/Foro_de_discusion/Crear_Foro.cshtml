@@ -1,0 +1,34 @@
+﻿@model Mabup2_Beta.Models.Crear_Foro_modelo
+@{
+    ViewData["Title"] = "Crear_Foro";
+}
+<div class="text-center">
+    <h1 class="display-2">MABUP</h1>
+</div>
+
+<h1>Crear_Foro</h1>
+<form asp-action="Crear_Foro" method="post">
+
+    <input type="hidden" asp-for="ID_Creador" value="@ViewBag.Creador"/>
+
+    <font class="h5" color="white">Ingrese el nombre del tema a tratar en el nuevo foro:</font>
+    <br /><br />
+    <input class="form-control" placeholder="Tema del nuevo foro" asp-for="Tema" />
+    <br />
+
+    <font class="h5" color="white">¿Con que materia esta involucrado?:</font>
+    <br /><br />
+    <select class="form-control" asp-for="Materia">
+        <option disabled>Selecciona una materia</option>
+        <option value="Matematicas">Matematicas</option>
+        <option value="Fisica">Fisica</option>
+        <option value="Quimica">Quimica</option>
+        <option value="Biologia">Biologia</option>
+        <option value="Psicologia Educativa">Psicologia Educativa</option>
+        <option value="Geografia">Geografia</option>
+        <option value="Ingles">Ingles</option>
+        <option value="Cuidado del medio ambiente">Cuidado del medio ambiente</option>
+    </select>
+
+    <button type="submit">Crear Foro</button>
+</form>

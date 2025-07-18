@@ -1,0 +1,80 @@
+﻿@model Mabup2_Beta.Models.Agregar_Tarea_Modelo
+@{
+    ViewData["Title"] = "Agregar_Tarea";
+}
+
+<div class="text-center">
+    <h1 class="display-2">MABUP</h1>
+</div>
+
+<h2>Ingresa los datos de la tarea que desees gestionar</h2>
+
+<br />
+
+<form asp-action="Agregar_Tarea" method="post">
+
+    <input class="form-control" placeholder="Titulo" asp-for="ID" id="Titulo" type="hidden" value="@ViewBag.ID" /> 
+
+    <p>
+        <label asp-for="Titulo" class="h4">Titulo de la tarea:</label>
+        <label asp-for="Titulo" required />
+        <font color="white">NOTA: El titulo de esta nueva tarea debe de ser distinto a la de otra que ya hallas agregado antes y tengas pendiente aun</font>
+        <center> <input class="form-control" placeholder="Titulo" asp-for="Titulo" id="Titulo" type="text" /> </center>
+    </p>
+
+    <br />
+
+    <p>
+        <label asp-for="Fecha_Entrega" class="h4">Fecha de entrega:</label>
+        <label asp-for="Fecha_Entrega" required />
+        <center><input class="form-control" placeholder="Fecha_Entrega" asp-for="Fecha_Entrega" id="Fecha_Entrega" type="date" /></center>
+    </p>
+
+    <br />
+
+    <p>
+        <label asp-for="Hora_Entrega" class="h4">Hora de entrega:</label>
+        <label asp-for="Hora_Entrega" required />
+        <center> <input class="form-control" placeholder="Hora_Entrega" asp-for="Hora_Entrega" id="Hora_Entrega" type="time" /> </center>
+    </p>
+
+    <br />
+
+    <p>
+        <label asp-for="Materia" class="h4">Materia:</label>
+        <label asp-for="Materia" required />
+        <center><input class="form-control" placeholder="Materia" asp-for="Materia" id="Materia" type="text" /></center>
+    </p>
+
+    <br />
+
+    <p>
+        <label asp-for="Dificultad" class="h4">Dificultad:</label>
+        <label asp-for="Dificultad" required />
+        <center> <input class="form-control" placeholder="Dificultad" asp-for="Dificultad" id="Dificultad" type="text" /> </center>
+    </p>
+
+    <br />
+
+    <p>
+        <label asp-for="Tema_Tarea" class="h4">Tema de la tarea:</label>
+        <label asp-for="Tema_Tarea" required />
+        <center><input class="form-control" placeholder="Tema_Tarea" asp-for="Tema_Tarea" id="Tema_Tarea" type="text" /></center>
+    </p>
+
+    <br>
+
+    <div style="text-align:center">
+        <font color="white" class="h4">
+            @ViewBag.Aviso
+        </font>
+    </div>
+
+    <!--Html.ActionLink("Gestor_Tareas/Agregar_Tarea", "Agregar_Tarea", new { ID = ViewBag.ID })-->
+
+    <br />
+
+    <button type="submit">(+) Agregar Tarea</button>
+    <button type="submit" asp-action="Gestor" formmethod="get">(-) Cancelar</button>
+</form>
+

@@ -1,0 +1,125 @@
+﻿@model Mabup2_Beta.Models.Panel_de_materias
+
+@{
+    ViewData["Title"] = "Panel_Materias";
+}
+
+<style>
+    h1 {
+        color: powderblue;
+    }
+</style>
+
+<br />
+<br />
+<div class="text-center">
+    <h1 class="display-2">MABUP</h1>
+</div>
+
+<font class="h4" color="white">Que materia desea consultar?</font>
+<br />
+<br />
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        font-family: sans-serif;
+        letter-spacing: 0.03em;
+        line-height: 1.6;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        height: 430px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+    }
+
+        .container .card {
+            width: 330px;
+            height: 212px;
+            border-radius: 8px;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin: 20px;
+            text-align: center;
+            transition: all 0.25s;
+        }
+
+            .container .card:hover {
+                transform: translateY(-15px);
+                box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+            }
+</style>
+
+<form asp-action="Reproductor" method="get">
+
+    <div class="container">
+
+        <a href="/Servicio_Stream/Reproductor/?Materia=Matematicas">
+            <div class="card">
+                <img src="~/Imagenes/Materias/Matematicas.png" />
+            </div>
+        </a>
+
+        <a href="/Servicio_Stream/Reproductor/?Materia=Fisica">
+            <div class="card">
+                <img src="~/Imagenes/Materias/Fisica.png" />
+            </div>
+        </a>
+
+        <a href="/Servicio_Stream/Reproductor/?Materia=Quimica">
+            <div class="card">
+                <img src="~/Imagenes/Materias/Quimica.png" />
+            </div>
+        </a>
+
+        <a href="/Servicio_Stream/Reproductor/?Materia=Biologia">
+            <div class="card">
+                <img src="~/Imagenes/Materias/Biologia.png" />
+            </div>
+        </a>
+
+        <a href="/Servicio_Stream/Reproductor/?Materia=Psicologia Educativa">
+            <div class="card">
+                <img src="~/Imagenes/Materias/Psicologia educativa.png" />
+            </div>
+        </a>
+
+        <a href="/Servicio_Stream/Reproductor/?Materia=Geografia">
+            <div class="card">
+                <img src="~/Imagenes/Materias/Geografia.png" />
+            </div>
+        </a>
+
+        <a href="/Servicio_Stream/Reproductor/?Materia=Ingles">
+            <div class="card">
+                <img src="~/Imagenes/Materias/Ingles.png" />
+            </div>
+        </a>
+
+        <a href="/Servicio_Stream/Reproductor/?Materia=Cuidado del medio ambiente">
+            <div class="card">
+                <img src="~/Imagenes/Materias/Cuidado del medio ambiente.png" />
+            </div>
+        </a>
+
+        <a href="/Servicio_Stream/Reproductor/?Materia=">
+            <div class="card">
+
+            </div>
+        </a>
+
+    </div>
+
+
+</form>

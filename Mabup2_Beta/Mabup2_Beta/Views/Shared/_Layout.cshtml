@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<!--body {
+        margin: 0;
+        padding: 0;
+        background: url();
+        background-size: cover;
+        background-position: center;
+        font-family: sans-serif;
+    }-->
+
+<!--Este style le da la imagen a todo el programa-->
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: url( https://lh3.googleusercontent.com/gq9ab0tAecXn1lroHpZgkq3Y_Gu85V8Fe4yZRtKk7u9ulYPsohzkBVi2rg1VPqreBfT6CPSY3cyfYrPkEBPuPhefvyz7yi6hC-LhqRD_rSQIn-gRKEJZ8IMgndbBPx1yW7CkhTbmk23SeIkVeBDAvlqkgcgvaKWwDztYx7jA2tShuvJnuqh3O79qUGXV5pj4YYOb_ff1YhczYTzTpahEka6tz81b86yKQDFCRRgBpSLWuyDqm4UcjRs8BLG4b2T8lf6byUIoW0AVypY0NUq-PX8GyXWUHNM3vfxOilXzmirhchoJVvXwF-E9bWPwYJFfnZD0tvdy710JxWcJHI2kpsHYfkS92WADyAwRc2AWcuMJE0OFtNgqHFbRNeZ0CJNS-RQXH_owLf7rbuyUSiXvGPegZztxfF8w5tP1GcV2FuSavl1dgaNjB67kmmdO2uBO1YbMfCNDBScWd6c3-i4h9VaNSpnWcgZEPCAhgq2SvI-9CdzkupSuzirvfoG6UegcSkPxnysNGsRCNtc6OmmPaPx5JHs2roLDruQi-oEoig_9TD3g-oJ5NCotEiq8yoje5wv2_FX8QSuUVhT2QL3kANaAUFMB0nT1WDNCN6MbJhZqaGzTj9aF1YJvac395Eicz8DfxtW_wwU4m20XWbGKRgK4mOC1vImRG_yvtWVuEblCVf3e4tR0FKOKNFDcEo0SnJnBZI_aItJ1nzW6nrknpaSM=w1429-h805-no?authuser=0 );
+        background-size: cover;
+        background-position: center;
+        font-family: sans-serif;
+    }
+    .footer{
+        text-align: center;
+        position: fixed;
+        width: 100px;
+        height: 50px;
+        color: aliceblue;
+    }
+    
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Mabup2_Beta</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+   
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="accordion">
+        <div class="footer">
+            &copy; 2021 - Mabup2_Beta
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

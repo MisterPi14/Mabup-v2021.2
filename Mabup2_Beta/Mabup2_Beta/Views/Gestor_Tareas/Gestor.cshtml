@@ -1,0 +1,89 @@
+﻿@model Mabup2_Beta.Models.Gestor_Estado
+@{
+    ViewData["Title"] = "Gestor";
+}
+
+<div class="text-center">
+    <h1 class="display-2">MABUP</h1>
+</div>
+
+<h2 class="country">Gestor de Tareas</h2>
+<br />
+
+
+<style>
+    table {
+        background-color: darkgrey;
+        width: 1100px;
+        height: 300px;
+    }
+</style>
+
+<table border="1" >
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Fecha de entrega</th>
+            <th>Hora de entrega</th>
+            <th>Dificultad</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+            @foreach (string Titulo_Tareas in ViewBag.Titulo)
+            {
+                <li>@Titulo_Tareas</li>
+            }
+        </td>
+        <td>
+            @foreach (string Fecha_Entrega_Tareas in ViewBag.Fecha_Entrega)
+            {
+                <li>@Fecha_Entrega_Tareas</li>
+            }
+        </td>
+        <td>
+            @foreach (string Hora_Entrega_Tareas in ViewBag.Hora_Entrega)
+            {
+                <li>@Hora_Entrega_Tareas</li>
+            }
+        </td>
+        <td>
+            @foreach (string Dificultad_Tareas in ViewBag.Dificultad)
+            {
+                <li>@Dificultad_Tareas</li>
+
+            }
+        </td>
+    </tr>
+</table>
+
+<br />
+<br />
+
+<form asp-action="Gestor" method="post">
+    <input asp-for="ID" value="@ViewBag.ID" type="hidden" />
+    <center>
+        <select asp-for="Tarea">
+            <option disabled>Selecciona una tarea</option>
+            @foreach (string Tarea in ViewBag.Titulo)
+            {
+                <option>@Tarea</option>
+            }
+        </select>
+        <button type="submit">Marcar como completada</button>
+    </center>
+</form>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<center>
+    <a href="/Gestor_Tareas/Agregar_Tarea/?ID=@ViewBag.ID"><img src="~/Imagenes/btnAgregar_Tarea.png" /></a>
+</center>
+
+
+
+

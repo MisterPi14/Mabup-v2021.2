@@ -1,0 +1,77 @@
+﻿@model Mabup2_Beta.Models.Registro_Modelo
+<!--Este model debe escribirse con m minuscula-->
+@{
+    ViewData["Title"] = "Registro";
+}
+<style>
+    div {
+        color: powderblue;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-2">MABUP</h1>
+</div>
+
+<hr />
+<br />
+
+<form asp-action="Registro" method="post">
+    <p>
+        <label asp-for="Nombre">Nombre:</label>
+        <label asp-for="Nombre" required />
+        <center><input class="form-control" placeholder="Nombre" asp-for="Nombre" id="Nombre" type="text" /></center>
+    </p>
+
+    <p>
+        <label asp-for="Ap_Pat">Apellido Paterno:</label>
+        <label asp-for="Ap_Pat" required />
+        <center><input class="form-control" placeholder="Apellido Paterno" asp-for="Ap_Pat" id="Ap_Pat" type="text" /></center>
+    </p>
+
+    <p>
+        <label asp-for="Ap_Mat">Apellido Materno:</label>
+        <label asp-for="Ap_Mat" required />
+        <center><input class="form-control" placeholder="Apellido Materno" asp-for="Ap_Mat" id="Ap_Mat" type="text" /></center>
+
+    </p>
+
+    <p>
+        <label asp-for="Correo">Correo:</label>
+        <label asp-for="Correo" required />
+        <center><input class="form-control" placeholder="Correo" asp-for="Correo" id="Correo" type="text" /></center>
+
+    </p>
+
+    <p>
+        <label asp-for="Contraseña">Contraseña:</label>
+        <label asp-for="Contraseña" required />
+        <center><input class="form-control" placeholder="Contraseña" asp-for="Contraseña" id="Contraseña" type="password" /></center>
+
+    </p>
+
+    <p>
+        <label asp-for="Confirmar_Contraseña">Confirmar Contraseña:</label>
+        <label asp-for="Confirmar_Contraseña" required />
+        <center><input class="form-control" placeholder="Confirmar Contraseña" asp-for="Confirmar_Contraseña" id="Confirmar_Contraseña" type="password" /></center>
+    </p>
+    <p>
+        <label>Estimado de tiempo</label>
+        <label>
+            YA CASI ACABAS CON TU REGISTRO!!!
+            
+            Por ultimo necesitamos que tomes el tiempo que te toma hacer una tarea en general, esto es con el fin de calibrar la aplicación para que te ayude a gestionar tus tiempos en tareas posteriores, es necesario que seas honesto con tus tiempos para un correcto desempeño de la app.
+        </label>
+        <center><label>Horas : Minutos</label></center>
+        <center><input asp-for="Estimado_Tiempo" type="time"/></center>
+    </p>
+
+    <br />
+    <center><font class="h3" color="white">@ViewBag.Aviso</font></center>
+    <br />
+
+    <button type="submit">A C E P T A R</button>
+    <button type="submit" asp-action="LogIn" formmethod="get">Cancelar</button>
+
+</form>
+

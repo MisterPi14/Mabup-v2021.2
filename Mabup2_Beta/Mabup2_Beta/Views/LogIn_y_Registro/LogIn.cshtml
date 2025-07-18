@@ -1,0 +1,51 @@
+﻿@model Mabup2_Beta.Models.LogIn
+
+<br />
+<br />
+<br />
+<br />
+
+
+<style>
+    h1 {
+        color: powderblue;
+    }
+</style>
+
+
+<div class="text-center">
+    <h1 class="display-1">MABUP</h1>
+</div>
+
+<hr />
+<br />
+
+<form asp-action="LogIn" method="post">
+
+    <p>
+        <label asp-for="Correo" class="h4">Correo:</label>
+        <label asp-for="Correo" required />
+        <center> <input class="form-control" placeholder="Correo" asp-for="Correo" id="Nombre" type="text" /> </center>
+    </p>
+
+    <br /><br />
+
+    <p>
+        <label asp-for="Contraseña" class="h4">Contraseña:</label>
+        <label asp-for="Contraseña" required />
+        <center><input class="form-control" placeholder="Contraseña" asp-for="Contraseña" id="Contraseña" type="password" /></center>
+    </p>
+
+    <label>@ViewBag.Aviso</label>
+
+
+    <br /><br /><br /><br />
+
+
+    <button type="submit">Iniciar Sesion</button>
+    <button type="submit" asp-action="Registro" formmethod="get">Registrarse</button>
+
+</form>
+
+
+

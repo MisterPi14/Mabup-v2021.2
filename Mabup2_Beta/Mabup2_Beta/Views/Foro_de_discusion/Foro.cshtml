@@ -1,0 +1,83 @@
+﻿@model Mabup2_Beta.Models.Foro_Chat
+@{
+    ViewData["Title"] = "Foro";
+}
+
+<style>
+    h1 {
+        text-align: center;
+        
+    }
+
+    input {
+        width: 900px;
+        height: 30px;
+        display: inline-block;
+    }
+
+    button {
+        width: 120px;
+        height: 30px;
+    }
+
+    label {
+        height: 40px;
+    }
+
+    div #Logo{
+        margin-top:10px;
+    }
+
+    div #Panel {
+        margin-top: 50px;
+        background-color: #47026D;
+        height: 600px;
+    }
+
+    div #Chats {
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+
+    div #Teclado{
+        background-color: dimgray;
+        height: 80px;
+    }
+</style>
+
+<div id="Logo">
+    <h1 class="display-2">MABUP</h1>
+</div>
+
+<div id="Panel">
+    <div id="Chats">
+        <br />
+        <center><font color="white" class="h6">Foro de dialogo de @ViewBag.Foro</font></center>
+        <br /><br />
+        @foreach (string Comentarios in ViewBag.Comentarios)
+        {
+            <label class="alert-info">&nbsp&nbsp @Comentarios &nbsp&nbsp</label>
+            <br />
+        }
+    </div>
+</div>
+
+<div id="Teclado">
+    <br />
+    <center>
+        <form asp-action="Foro" method="post">
+            <input asp-for="ID" value="@ViewBag.ID" type="hidden" />
+            <input asp-for="Foro" value="@ViewBag.Foro" type="hidden" />
+            <input asp-for="Comentario" type="text" />
+            <button type="submit">Enviar</button>
+        </form>
+    </center>
+</div>
+
+
+
+
+
+
+
+
