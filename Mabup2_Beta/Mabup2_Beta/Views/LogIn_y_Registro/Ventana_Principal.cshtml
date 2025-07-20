@@ -1,7 +1,4 @@
 ﻿<style>
-    h1 {
-        color: purple;
-    }
 
     label {
         color: white;
@@ -13,10 +10,39 @@
         padding: 10px;
     }
 
+    .foro-div{
+        margin-right: 45%;
+		margin-left: 45%;
+        background-color: dimgrey;
+        width: 10%;
+    }
+
+    .buttons-section{
+        display: flex;
+        flex-direction: row;
+		justify-content: center;
+        gap: 35%;
+		width: 100%;
+    }
+
+    .buttons{
+        width: 25%;
+    }
+
+    .bottons-link {
+        object-fit: contain;
+        object-position: center center;
+        margin-right: 50px;
+    }
+
+    img{
+		width: 100%;
+    }
+
 </style>
 
-<div class="text-center">
-    <h1 class="display-2">MABUP</h1>
+<div class="mabup-logo">
+    <h1 class="display-1">MABUP</h1>
 </div>
 
 <h2 class="country">VENTANA PRINCIPAL</h2>
@@ -30,18 +56,22 @@
 
 <form asp-action="Ventana_Principal" method="post">
 
-    <div style="text-align:center">
+    <div class="foro-div">
         <a href="/Foro_de_discusion/Buscar_Foro/?ID=@ViewBag.ID">
             <img src="~/Imagenes/Foro.png" alt="" style="width: 100px; height: 100px; object-fit: contain; object-position: center center;" align="middle" />
         </a>
     </div>
 
-    <a href="/Gestor_Tareas/Gestor/?ID=@ViewBag.ID">
-        <img src="~/Imagenes/Gestor_Tareas.png" alt="" style="width: 346px; height: 574px; object-fit: contain; object-position: center center;" align="left" />
-    </a>
-
-    <a href="/Servicio_Stream/Panel_Materias">
-        <img src="~/Imagenes/Servicio_Stream.png" alt="" style="width: 346px; height: 574px; object-fit: contain; object-position: center center;" align="right" />
-    </a>
-
+    <section class="buttons-section">
+        <div class="buttons">
+            <a class="bottons-link" href="/Gestor_Tareas/Gestor/?ID=@ViewBag.ID">
+                <img src="~/Imagenes/Gestor_Tareas.png" alt="" align="left" />
+            </a>
+        </div>
+        <div class="buttons">
+            <a class="bottons-link" href="/Servicio_Stream/Panel_Materias">
+                <img src="~/Imagenes/Servicio_Stream.png" alt="" align="right" />
+            </a>
+        </div>
+    </section>
 </form>

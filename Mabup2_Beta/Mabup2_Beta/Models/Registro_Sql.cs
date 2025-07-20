@@ -12,7 +12,7 @@ namespace Mabup2_Beta.Models
     {
         public static void AgregarUsuario(Registro_Modelo Datos)
         {
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=BD_Mabup2; Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BD_Mabup2; Integrated Security=True");
 
             conn.Open();
 

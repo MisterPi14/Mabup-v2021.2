@@ -3,6 +3,7 @@ CREATE DATABASE BD_Mabup2
 --TABLA USUARIOS
 CREATE TABLE tb_Usuarios (ID INT IDENTITY, Nombre VARCHAR(50), Ap_Pat VARCHAR(50), Ap_Mat NVARCHAR(50), Correo NVARCHAR(50), Contraseña NVARCHAR(50), Estimado_de_tiempo TIME)
 INSERT INTO tb_Usuarios(Nombre, Ap_Pat, Ap_Mat, Correo, Contraseña, Estimado_de_tiempo) VALUES ('Mabup', null, null, null, '141102', null)
+INSERT INTO tb_Usuarios(Nombre, Ap_Pat, Ap_Mat, Correo, Contraseña, Estimado_de_tiempo) VALUES ('Diego', 'Piña', 'Vargas', 'edpv141102@gmail.com', '141102', '01:00')
 
 SELECT * FROM tb_Usuarios
 SELECT * FROM tb_Usuarios WHERE Correo = 'fbi' AND Contraseña = '14'
@@ -24,7 +25,7 @@ SELECT Tema,Materia,Nombre,Ap_Pat,Ap_Mat FROM tb_Foro JOIN tb_Usuarios ON tb_For
 
 ---TABLA COMENTARIOS
 CREATE TABLE tb_Comentarios(#Comentario INT IDENTITY, ID_usuario INT, Comentario VARCHAR(1000), Fecha DATETIME, Foro VARCHAR(200))
-SELECT * FROM tb_Comentarios 
+SELECT * FROM tb_Foro 
 
 
 

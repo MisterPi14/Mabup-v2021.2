@@ -16,7 +16,7 @@ namespace Mabup2_Beta.Controllers
         {
             ViewBag.ID = ID;
 
-            SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog=BD_Mabup2; Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=BD_Mabup2; Integrated Security=True");
 
             //CONSULTANDO NUMERO DE FOROS
             SqlCommand Num_Foros = new SqlCommand();
@@ -74,7 +74,7 @@ namespace Mabup2_Beta.Controllers
         {
             ViewBag.ID = Entrar_Foro.ID;
 
-            SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog=BD_Mabup2; Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=BD_Mabup2; Integrated Security=True");
 
             //CONSULTANDO NUMERO DE FOROS
             SqlCommand Num_Foros = new SqlCommand();
@@ -146,7 +146,7 @@ namespace Mabup2_Beta.Controllers
 
             try
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog=BD_Mabup2; Integrated Security=True");
+                SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=BD_Mabup2; Integrated Security=True");
 
 
                 //CONSULTANDO NUMERO DE TAREAS
@@ -205,7 +205,7 @@ namespace Mabup2_Beta.Controllers
             if (Postear_Chat.ID > 0 && Postear_Chat.Comentario != null)
             {
                 //Guardando Comentario
-                SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog=BD_Mabup2; Integrated Security=True");
+                SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=BD_Mabup2; Integrated Security=True");
                 string query = "INSERT INTO tb_Comentarios VALUES (@ID_usuario, @Comentario, @Fecha, @Foro)";
                 SqlCommand Comando_Tarea = new SqlCommand(query, conn);
 
@@ -213,7 +213,7 @@ namespace Mabup2_Beta.Controllers
 
                 Comando_Tarea.Parameters.AddWithValue("@ID_usuario", Postear_Chat.ID);
                 Comando_Tarea.Parameters.AddWithValue("@Comentario", Postear_Chat.Comentario);
-                Comando_Tarea.Parameters.AddWithValue("@Fecha", (DateTime.Today.ToString("dd-MM-yyyy")+" "+DateTime.Now.ToString("HH:mm:ss")));
+                Comando_Tarea.Parameters.AddWithValue("@Fecha", (DateTime.Today.ToString("MM-dd-yyyy")+" "+DateTime.Now.ToString("HH:mm:ss")));
                 Comando_Tarea.Parameters.AddWithValue("@Foro", Postear_Chat.Foro);
 
                 int resultado = Comando_Tarea.ExecuteNonQuery();
@@ -236,7 +236,7 @@ namespace Mabup2_Beta.Controllers
         [HttpPost]
         public IActionResult Crear_Foro(Crear_Foro_modelo Añadir_foro)
         {
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=BD_Mabup2; Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BD_Mabup2; Integrated Security=True");
 
             conn.Open();
 

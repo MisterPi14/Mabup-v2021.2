@@ -19,7 +19,7 @@ namespace Mabup2_Beta.Controllers
             
             ViewBag.Tareas = "";
 
-            SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog=BD_Mabup2; Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=BD_Mabup2; Integrated Security=True");
 
 
             //CONSULTANDO NUMERO DE TAREAS
@@ -81,7 +81,7 @@ namespace Mabup2_Beta.Controllers
         [HttpPost]
         public IActionResult Gestor(Gestor_Estado Estado)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog=BD_Mabup2; Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=BD_Mabup2; Integrated Security=True");
 
             //COMPLETANDO TAREA
             SqlCommand Marcar_Completado = new SqlCommand();
@@ -106,7 +106,7 @@ namespace Mabup2_Beta.Controllers
             {
                 //CONSULTANDO ID
                 SqlDataReader Dr;
-                SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog=BD_Mabup2; Integrated Security=True");
+                SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=BD_Mabup2; Integrated Security=True");
                 SqlCommand comando_ID = new SqlCommand();
 
 
@@ -130,7 +130,7 @@ namespace Mabup2_Beta.Controllers
                 conn.Close();
 
                 //Guardando Tarea
-                SqlConnection conn_2 = new SqlConnection(@"Data Source=.; Initial Catalog=BD_Mabup2; Integrated Security=True");
+                SqlConnection conn_2 = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=BD_Mabup2; Integrated Security=True");
                 string query = "INSERT INTO tb_Tareas VALUES (@ID, @Titulo, @Fecha_Inicio, @Hora_Inicio, @Fecha_Entrega, @Hora_Entrega, @Materia, @Dificultad, @Tema_Tarea, @Estado)";
                 SqlCommand Comando_Tarea = new SqlCommand(query, conn_2);
 
@@ -138,7 +138,7 @@ namespace Mabup2_Beta.Controllers
 
                 Comando_Tarea.Parameters.AddWithValue("@ID", Datos_Tarea.ID);
                 Comando_Tarea.Parameters.AddWithValue("@Titulo", Datos_Tarea.Titulo);
-                Comando_Tarea.Parameters.AddWithValue("@Fecha_Inicio", DateTime.Today.ToString("dd-MM-yyyy"));
+                Comando_Tarea.Parameters.AddWithValue("@Fecha_Inicio", DateTime.Today.ToString("MM-dd-yyyy"));
                 Comando_Tarea.Parameters.AddWithValue("@Hora_Inicio", DateTime.Now.ToString("HH:mm:ss"));
                 Comando_Tarea.Parameters.AddWithValue("@Fecha_Entrega", Datos_Tarea.Fecha_Entrega);
                 Comando_Tarea.Parameters.AddWithValue("@Hora_Entrega", Datos_Tarea.Hora_Entrega);

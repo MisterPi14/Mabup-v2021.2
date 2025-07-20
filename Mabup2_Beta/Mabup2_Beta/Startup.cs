@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +31,7 @@ namespace Mabup2_Beta
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink(); // ← Agregado
             }
             else
             {
@@ -47,7 +48,7 @@ namespace Mabup2_Beta
                 endpoints.MapControllerRoute(
                     name: "default",
                 //pattern: "{controller=Gestor_Tareas}/{action=Gestor}/{id?}");
-                pattern: "{controller=LogIn_y_Registro}/{action=LogIn}/{id?}");
+                pattern: "{controller=Servicio_Stream}/{action=Panel_Materias}/{id?}");
                 //pattern: "{controller=LogIn_y_Registro}/{action=Ventana_Principal}/{id?}");
                 //pattern: "{controller=Servicio_Stream}/{action=Panel_Materias}/{id?}");
                 //pattern: "{controller=Foro_de_discusion}/{action=Buscar_Foro}/{id?}");

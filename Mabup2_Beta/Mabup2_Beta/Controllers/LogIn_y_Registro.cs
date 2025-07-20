@@ -38,7 +38,7 @@ namespace Mabup2_Beta.Controllers
         public IActionResult LogIn(LogIn Datos_Form)
         {
             SqlDataReader Dr;
-            SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog=BD_Mabup2; Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=BD_Mabup2; Integrated Security=True");
             SqlCommand cmd = new SqlCommand();
 
 
