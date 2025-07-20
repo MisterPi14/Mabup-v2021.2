@@ -5,6 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Mabup2_Beta.Models;
 
+
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using Mabup2_Beta.Models;
+
+
 namespace Mabup2_Beta.Controllers
 {
     public class Servicio_Stream : Controller
@@ -78,12 +85,52 @@ namespace Mabup2_Beta.Controllers
             return View();
         }
         
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult Reproductor(Reproductor Seleccion)
         {
             ViewBag.Materia = Seleccion.Materia;
             ViewBag.Tema = Seleccion.Tema;
             return View();
+        }*/
+
+        [HttpPost]
+        public async Task<IActionResult> Reproductor(Reproductor model)
+        {
+            var resultado = await BuscarVideosEnYouTube(model.Tema);
+            return View(resultado);
         }
+
+
+        public async Task<YouTubeSearchResult> BuscarVideosEnYouTube(string tema)
+        {
+            string apiKey = ""; // Reemplaza con tu API Key de YouTube
+            string url = $"https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=5&q={tema}&key={apiKey}";
+
+            var videos = new List<YouTubeVideo>();
+
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetStringAsync(url);
+                var json = JObject.Parse(response);
+
+                foreach (var item in json["items"])
+                {
+                    videos.Add(new YouTubeVideo
+                    {
+                        VideoId = item["id"]["videoId"].ToString(),
+                        Title = item["snippet"]["title"].ToString(),
+                        ThumbnailUrl = item["snippet"]["thumbnails"]["default"]["url"].ToString()
+                    });
+                }
+            }
+
+            return new YouTubeSearchResult
+            {
+                Tema = tema,
+                Videos = videos
+            };
+        }
+
+
     }
 }

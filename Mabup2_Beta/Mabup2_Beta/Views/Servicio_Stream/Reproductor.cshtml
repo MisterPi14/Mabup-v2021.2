@@ -1,4 +1,4 @@
-﻿@model Mabup2_Beta.Models.Reproductor
+﻿@model Mabup2_Beta.Models.YouTubeSearchResult
 
 @{
     ViewData["Title"] = "Reproductor";
@@ -27,174 +27,35 @@
 <font class="h4">Selecciona el tema que sea de tu interes</font>
 
 <form asp-action="Reproductor" method="post">
-    <input asp-for="Materia" value="@ViewBag.Materia" type="hidden" />
-    <select asp-for="Tema">
-        <option disabled>Selecciona un tema</option>
-        <option value="@ViewBag.Tema1">@ViewBag.Tema1</option>
-        <option value="@ViewBag.Tema2">@ViewBag.Tema2</option>
-        <option value="@ViewBag.Tema3">@ViewBag.Tema3</option>
-        <option value="@ViewBag.Tema4">@ViewBag.Tema4</option>
+    <input name="Materia" value="@Model.Tema" type="hidden" />
+    <select name="Tema">
+        <option disabled selected>Selecciona un tema</option>
+        <option value="Algebra">Algebra</option>
+        <option value="Geometria euclediana y analitica">Geometria euclediana y analitica</option>
+        <option value="Calculo Diferencial e Integral">Calculo Diferencial e Integral</option>
+        <option value="Probabilidad y estadistica">Probabilidad y estadistica</option>
+        @* ...otros temas según la materia *@
     </select>
     <button type="submit">Seleccionar</button>
 </form>
 
-
 <!--VALIDACION DE LOS VIDEOS-->
-
-
-@if (ViewBag.Materia == "Matematicas")
+@if (Model?.Videos != null && Model.Videos.Count > 0)
 {
-    if (ViewBag.Tema == "Algebra")
-    {
-        <video controls="controls">
-            <source src="~/Videos/Matematicas/Te%20Muestro%20como%20Pienso%20la%20Matem%c3%a1tica%20%20El%20Traductor_480p.mp4" type="video/mp4" />
-        </video>
-    }
-    else if (ViewBag.Tema == "Geometria euclediana y analitica")
-    {
-
-    }
-    else if (ViewBag.Tema == "Calculo Diferencial e Integral")
-    {
-        <video controls="controls">
-            <source src="~/Videos/Matematicas/Integraci%c3%b3n%20por%20sustituci%c3%b3n%20trigonom%c3%a9trica.mp4" type="video/mp4" />
-        </video>
-    }
-    else if (ViewBag.Tema == "Probabilidad y estadistica")
-    {
-
-    }
+    <h3>Videos encontrados para: @Model.Tema</h3>
+    <div>
+        @foreach (var video in Model.Videos)
+        {
+            <div style="margin-bottom:30px;">
+                <h4>@video.Title</h4>
+                <img src="@video.ThumbnailUrl" alt="@video.Title" />
+                <br />
+                <iframe width="500" height="281" src="https://www.youtube.com/embed/@video.VideoId" frameborder="0" allowfullscreen></iframe>
+            </div>
+        }
+    </div>
 }
-else if (ViewBag.Materia == "Fisica")
+else if (!string.IsNullOrEmpty(Model?.Tema))
 {
-    if (ViewBag.Tema == "Termodinamica")
-    {
-
-    }
-    else if (ViewBag.Tema == "Mecanica")
-    {
-
-    }
-    else if (ViewBag.Tema == "Electromagnetismo")
-    {
-
-    }
-    else if (ViewBag.Tema == "Optica")
-    {
-
-    }
-}
-else if (ViewBag.Materia == "Quimica")
-{
-    if (ViewBag.Tema == "Elementos y compuestos")
-    {
-
-    }
-    else if (ViewBag.Tema == "Reacciones quimicas")
-    {
-
-    }
-    else if (ViewBag.Tema == "Acidos y bases")
-    {
-
-    }
-    else if (ViewBag.Tema == "El atomo")
-    {
-
-    }
-}
-else if (ViewBag.Materia == "Biologia")
-{
-    if (ViewBag.Tema == "Los seres vivos")
-    {
-
-    }
-    else if (ViewBag.Tema == "La celulas")
-    {
-
-    }
-    else if (ViewBag.Tema == "Tipos de respiracion")
-    {
-
-    }
-    else if (ViewBag.Tema == "Metabolismo")
-    {
-
-    }
-}
-else if (ViewBag.Materia == "Psicologia educativa")
-{
-    if (ViewBag.Tema == "Desarrollo de la habilidad del pensamiento")
-    {
-
-    }
-    else if (ViewBag.Tema == "Proyecto de vida")
-    {
-
-    }
-    else if (ViewBag.Tema == "Comunicacion y liderazgo")
-    {
-
-    }
-    else if (ViewBag.Tema == "Vida Profesional")
-    {
-
-    }
-}
-else if (ViewBag.Materia == "Geografia")
-{
-    if (ViewBag.Tema == "Localizacion de las naciones")
-    {
-
-    }
-    else if (ViewBag.Tema == "Urbanización")
-    {
-
-    }
-    else if (ViewBag.Tema == "Medio ambiente y tipos")
-    {
-
-    }
-    else if (ViewBag.Tema == "Principales zonas de comercio actual")
-    {
-
-    }
-}
-else if (ViewBag.Materia == "Ingles")
-{
-    if (ViewBag.Tema == "Past perfect")
-    {
-
-    }
-    else if (ViewBag.Tema == "Conditionals")
-    {
-
-    }
-    else if (ViewBag.Tema == "Verb To be")
-    {
-
-    }
-    else if (ViewBag.Tema == "Pasive and active voice")
-    {
-
-    }
-}
-else if (ViewBag.Materia == "Cuidado del medio ambiente")
-{
-    if (ViewBag.Tema == "Calentamiento global")
-    {
-
-    }
-    else if (ViewBag.Tema == "Contaminacion ambiental")
-    {
-
-    }
-    else if (ViewBag.Tema == "Ahorro de insumos")
-    {
-
-    }
-    else if (ViewBag.Tema == "Formas de reducir el impacto ambiental")
-    {
-
-    }
+    <p>No se encontraron videos para el tema seleccionado.</p>
 }
