@@ -12,28 +12,30 @@
     * Registration of new users with data validation and password confirmation.
     * Login with database validation.
     * Estimation of average time for tasks, used to personalize the experience.
+  
+![LogIn-SignUp](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTJqMGpyaDc2MXJzNm5ncXgyM3AyNm1nZzd4ejE0cmpkczRoZGZ2cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/n1ByfjISqBvmgpdCcx/giphy.gif)
 
 2.  **Task Manager**
     * Viewing of pending tasks per user.
     * Adding new tasks with title, due date/time, subject, difficulty, and topic.
     * Marking tasks as completed.
+      
+![task-manager](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHViam1hcjZ4MmoyYmM3bnIzazRtaDVwOHB5MjY5N3luaDVmc2RyZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wyZqyJZAfvuWTnYMtw/giphy.gif)
 
 3.  **Educational Streaming Service**
     * Subject selection panel (Mathematics, Physics, Chemistry, Biology, Educational Psychology, Geography, English, Environmental Care).
     * Selection of specific topics within each subject.
     * Educational video player associated with each topic.
+  
+![stream-gallery](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa29icHMyeWhvazRwbjM2czNyeHlheGx0NG15Mm80MzA1d3Rsb2Z6cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VamElx9W89BMwsgDsv/giphy.gif)
 
 4.  **Discussion Forum**
     * Search and listing of existing forums, showing topic, subject, and author.
     * Creation of new forums, associating topic and subject.
     * Access to forums to view and participate in discussions.
     * Posting comments in forums, with author and date/time registration.
-
-5.  **Navigation and User Experience**
-    * Personalized main window after login, with quick access to task manager, forums, and streaming.
-    * Friendly and student-adapted visual interface.
-
----
+  
+![forum](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmM2NHJueWd1b3Y3em0zNHpuZTBvbjhpMmV4ajRsYnBsOG04aHB0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SrZmvIxzxOZVbpLdbE/giphy.gif)
 
 ## Project Structure
 
