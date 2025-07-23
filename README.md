@@ -1,220 +1,110 @@
-\# Mabup-v2021.2
+# Mabup-v2021.2
 
+## Overview
 
-
-\## Descripción general
-
-
-
-\*\*MABUP\*\* es una plataforma web educativa desarrollada en \*\*ASP.NET Core 3.1 (C# 8.0)\*\* que integra varias herramientas para apoyar a estudiantes en la gestión de tareas, el acceso a recursos multimedia por materia, y la colaboración mediante foros de discusión. El sistema permite a los usuarios registrarse, iniciar sesión, gestionar sus tareas académicas, participar en foros temáticos y acceder a videos educativos organizados por materias.
-
-
+**MABUP** is an educational web platform developed in **ASP.NET Core 3.1 (C# 8.0)** that integrates various tools to support students in task management, access to multimedia resources by subject, and collaboration through discussion forums. The system allows users to register, log in, manage their academic tasks, participate in thematic forums, and access educational videos organized by subject.
 
 ---
 
+## Main Features
 
+1.  **User Authentication and Registration**
+    * Registration of new users with data validation and password confirmation.
+    * Login with database validation.
+    * Estimation of average time for tasks, used to personalize the experience.
 
-\## Funcionalidades principales
+2.  **Task Manager**
+    * Viewing of pending tasks per user.
+    * Adding new tasks with title, due date/time, subject, difficulty, and topic.
+    * Marking tasks as completed.
 
+3.  **Educational Streaming Service**
+    * Subject selection panel (Mathematics, Physics, Chemistry, Biology, Educational Psychology, Geography, English, Environmental Care).
+    * Selection of specific topics within each subject.
+    * Educational video player associated with each topic.
 
+4.  **Discussion Forum**
+    * Search and listing of existing forums, showing topic, subject, and author.
+    * Creation of new forums, associating topic and subject.
+    * Access to forums to view and participate in discussions.
+    * Posting comments in forums, with author and date/time registration.
 
-1\.  \*\*Autenticación y registro de usuarios\*\*
-
-&nbsp;   \* Registro de nuevos usuarios con validación de datos y confirmación de contraseña.
-
-&nbsp;   \* Inicio de sesión con validación contra base de datos.
-
-&nbsp;   \* Estimación de tiempo promedio para tareas, usado para personalizar la experiencia.
-
-
-
-2\.  \*\*Gestor de tareas\*\*
-
-&nbsp;   \* Visualización de tareas pendientes por usuario.
-
-&nbsp;   \* Agregar nuevas tareas con título, fecha/hora de entrega, materia, dificultad y tema.
-
-&nbsp;   \* Marcar tareas como completadas.
-
-
-
-3\.  \*\*Servicio de streaming educativo\*\*
-
-&nbsp;   \* Panel de selección de materias (Matemáticas, Física, Química, Biología, Psicología Educativa, Geografía, Inglés, Cuidado del medio ambiente).
-
-&nbsp;   \* Selección de temas específicos dentro de cada materia.
-
-&nbsp;   \* Reproductor de videos educativos asociados a cada tema.
-
-
-
-4\.  \*\*Foro de discusión\*\*
-
-&nbsp;   \* Búsqueda y listado de foros existentes, mostrando tema, materia y autor.
-
-&nbsp;   \* Creación de nuevos foros, asociando tema y materia.
-
-&nbsp;   \* Acceso a foros para visualizar y participar en discusiones.
-
-&nbsp;   \* Publicación de comentarios en los foros, con registro de autor y fecha/hora.
-
-
-
-5\.  \*\*Navegación y experiencia de usuario\*\*
-
-&nbsp;   \* Ventana principal personalizada tras el inicio de sesión, con acceso rápido a gestor de tareas, foros y streaming.
-
-&nbsp;   \* Interfaz visual amigable y adaptada a estudiantes.
-
-
+5.  **Navigation and User Experience**
+    * Personalized main window after login, with quick access to task manager, forums, and streaming.
+    * Friendly and student-adapted visual interface.
 
 ---
 
+## Project Structure
 
-
-\## Estructura del proyecto
-
-
-
-\* \*\*Controllers\*\*: Lógica de negocio y manejo de rutas para autenticación, gestor de tareas, foros y streaming.
-
-\* \*\*Models\*\*: Modelos de datos para usuarios, tareas, foros, comentarios, materias y videos.
-
-\* \*\*Views\*\*: Vistas Razor para cada funcionalidad, incluyendo formularios, paneles y reproductores.
-
-\* \*\*wwwroot\*\*: Recursos estáticos como imágenes, CSS y librerías JS (Bootstrap, jQuery Validation).
-
-
+* **Controllers**: Business logic and route handling for authentication, task manager, forums, and streaming.
+* **Models**: Data models for users, tasks, forums, comments, subjects, and videos.
+* **Views**: Razor views for each functionality, including forms, panels, and players.
+* **wwwroot**: Static resources such as images, CSS, and JS libraries (Bootstrap, jQuery Validation).
 
 ---
 
+## How to Install Mabup-v2021.2 Locally
 
+This guide details the procedure for installing and configuring **Mabup-v2021.2** for execution in a local machine environment. The application's operation in this mode is autonomous, not requiring external services or remote server infrastructure. The functionality and stability of Mabup-v2021.2 are directly conditioned by the pre-existence and correct configuration of various software dependencies on the host operating system.
 
-\## Cómo instalar el software Mabup-v2021.2 localmente
+### Software Dependencies
 
+The correct execution of Mabup-v2021.2 requires the availability of the following components on the local system:
 
+#### 1. .NET Core Runtimes
 
-Esta guía detalla el procedimiento para la instalación y configuración de \*\*Mabup-v2021.2\*\* para su ejecución en un entorno de máquina local. La operación de la aplicación en este modo es autónoma, no requiriendo de servicios externos o infraestructura de servidor remota. La funcionalidad y estabilidad de Mabup-v2021.2 están directamente condicionadas por la preexistencia y correcta configuración de diversas dependencias de software en el sistema operativo anfitrión.
+Mabup-v2021.2 is built on the .NET Core platform, so it requires specific execution environments to operate.
 
+* **Microsoft.NETCore.App 3.1.0:**
+    This is the fundamental .NET Core 3.1.0 runtime. It provides the execution environment (CoreCLR) and the base class library (BCL) set that are essential for loading and running any .NET Core application. Its function is similar to a lightweight virtual machine that interprets and executes the compiled application code.
+    * **Download:** [https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-3.1.0-windows-x64-installer](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-3.1.0-windows-x64-installer)
 
+* **Microsoft.AspNetCore.App 3.1.0:**
+    This runtime extends the .NET Core environment with ASP.NET Core-specific components. It includes libraries for developing web applications and services, indicating that Mabup-v2021.2 uses functionalities related to web user interfaces (e.g., embedded Blazor or Razor Pages) or communication services based on the ASP.NET Core framework, even for its local operation.
+    * **Download:** [https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-3.1.0-windows-x64-installer](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-3.1.0-windows-x64-installer)
 
-\### Dependencias de Software
+#### 2. Local Database Instance
 
+Mabup-v2021.2 requires a database for the persistence of operational and configuration data.
 
+* **Microsoft SQL Server 2019 LocalDB:**
+    LocalDB is a lightweight variant of the SQL Server Express database engine, optimized for development, testing, and local application deployment scenarios that need a relational database. It runs as an on-demand user process without the complexity of a full SQL Server installation, making it ideal for local machine environments. Mabup-v2021.2 will connect to this LocalDB instance to store and retrieve its data.
+    * **Acquisition:** LocalDB is typically distributed as a selectable component within **SQL Server Express** installers or included with Microsoft's development tools suite, such as **Visual Studio 2022 Community**.
 
-La correcta ejecución de Mabup-v2021.2 requiere la disponibilidad de los siguientes componentes en el sistema local:
+#### 3. Development Environment and Tools
 
+The following tool is essential for acquiring some dependencies and for the overall work environment.
 
+* **Visual Studio 2022 Community:**
+    This is Microsoft's primary Integrated Development Environment (IDE). Its installation is crucial for several reasons:
+    * **LocalDB Acquisition:** Visual Studio often provides the easiest way to install and configure SQL Server LocalDB and its associated management tools (such as SQL Server Object Explorer).
+    * **SDKs and Tools:** It may include or facilitate the installation of additional .NET SDKs, build tools, and components that, while not strictly runtimes, may be necessary for the correct functioning or deployment of Mabup-v2021.2, especially if the application interacts with other .NET platform services or components that require specific tools.
 
-\#### 1. Runtimes de .NET Core
+### Verifying Dependency Installation
 
+Once the corresponding installers for each dependency have been run, it is recommended to verify their correct integration into the system:
 
+#### Verifying .NET Runtimes
 
-Mabup-v2021.2 está construida sobre la plataforma .NET Core, por lo que requiere entornos de ejecución específicos para operar.
+Confirm the existence of the following directories in the file system, which house the runtime components:
 
+* `C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.0`
+* `C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.0`
 
+#### Verifying Microsoft SQL Server 2019 LocalDB
 
-\* \*\*Microsoft.NETCore.App 3.1.0:\*\*
+The presence of Microsoft SQL Server 2019 LocalDB can be confirmed by:
 
-&nbsp;   Este es el runtime fundamental de .NET Core versión 3.1.0. Proporciona el entorno de ejecución (CoreCLR) y el conjunto de bibliotecas de clases base (BCL) que son esenciales para la carga y ejecución de cualquier aplicación .NET Core. Su función es similar a la de una máquina virtual ligera que interpreta y ejecuta el código compilado de la aplicación.
+* The "Apps & features" list in Windows settings.
+* Attempting to initiate a database connection to the `(localdb)\mssqllocaldb` instance through tools like SQL Server Management Studio (SSMS) or SQL Server Object Explorer within Visual Studio.
+* The ability of the Mabup-v2021.2 application to initialize and connect to its local database when executed.
 
-&nbsp;   \* \*\*Descarga:\*\* \[https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-3.1.0-windows-x64-installer](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-3.1.0-windows-x64-installer)
+#### Verifying Visual Studio 2022 Community
 
+Confirm the correct installation of Visual Studio 2022 Community by:
 
+* Its listing in Windows "Apps & features".
+* The ability to launch the IDE from the start menu and access its main functionalities, including SQL Server Object Explorer if the data development component was installed.
 
-\* \*\*Microsoft.AspNetCore.App 3.1.0:\*\*
-
-&nbsp;   Este runtime extiende el ambiente de .NET Core con componentes específicos de ASP.NET Core. Incluye bibliotecas para el desarrollo de aplicaciones web y servicios, lo que indica que Mabup-v2021.2 utiliza funcionalidades relacionadas con interfaces de usuario web (por ejemplo, Blazor o Razor Pages embebidos) o servicios de comunicación basados en el framework ASP.NET Core, incluso para su operación local.
-
-&nbsp;   \* \*\*Descarga:\*\* \[https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-3.1.0-windows-x64-installer](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-3.1.0-windows-x64-installer)
-
-
-
-\#### 2. Instancia de Base de Datos Local
-
-
-
-Mabup-v2021.2 requiere una base de datos para la persistencia de datos operativos y de configuración.
-
-
-
-\* \*\*Microsoft SQL Server 2019 LocalDB:\*\*
-
-&nbsp;   LocalDB es una variante ligera del motor de base de datos SQL Server Express, optimizada para escenarios de desarrollo, pruebas y despliegues de aplicaciones locales que necesitan una base de datos relacional. Se ejecuta como un proceso de usuario bajo demanda, sin la complejidad de una instalación completa de SQL Server, lo que lo hace ideal para entornos de máquina local. Mabup-v2021.2 se conectará a esta instancia de LocalDB para almacenar y recuperar sus datos.
-
-&nbsp;   \* \*\*Adquisición:\*\* LocalDB suele distribuirse como un componente seleccionable dentro de los instaladores de \*\*SQL Server Express\*\* o se incluye con la suite de herramientas de desarrollo de Microsoft, como \*\*Visual Studio 2022 Community\*\*.
-
-
-
-\#### 3. Entorno de Desarrollo y Herramientas
-
-
-
-La siguiente herramienta es fundamental para la adquisición de algunas dependencias y para el entorno general de trabajo.
-
-
-
-\* \*\*Visual Studio 2022 Community:\*\*
-
-&nbsp;   Este es el Entorno de Desarrollo Integrado (IDE) principal de Microsoft. Su instalación es crucial por varias razones:
-
-&nbsp;   \* \*\*Adquisición de LocalDB:\*\* A menudo, Visual Studio proporciona la manera más sencilla de instalar y configurar SQL Server LocalDB y sus herramientas de administración asociadas (como SQL Server Object Explorer).
-
-&nbsp;   \* \*\*SDKs y Herramientas:\*\* Puede incluir o facilitar la instalación de SDKs de .NET adicionales, herramientas de compilación y componentes que, aunque no sean estrictamente runtimes, pueden ser necesarios para el correcto funcionamiento o despliegue de Mabup-v2021.2, especialmente si la aplicación interactúa con otros servicios o componentes de la plataforma .NET que requieren herramientas específicas.
-
-
-
-\### Verificación de la Instalación de Dependencias
-
-
-
-Una vez ejecutados los instaladores correspondientes a cada dependencia, se recomienda verificar su correcta integración en el sistema:
-
-
-
-\#### Verificación de Runtimes de .NET
-
-
-
-Confirme la existencia de los siguientes directorios en el sistema de archivos, los cuales albergan los componentes del runtime:
-
-
-
-\* `C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\3.1.0`
-
-\* `C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App\\3.1.0`
-
-
-
-\#### Verificación de Microsoft SQL Server 2019 LocalDB
-
-
-
-La presencia de Microsoft SQL Server 2019 LocalDB puede confirmarse mediante:
-
-
-
-\* La lista de "Aplicaciones y características" en la configuración de Windows.
-
-\* Intentando iniciar una conexión de base de datos a la instancia `(localdb)\\mssqllocaldb` a través de herramientas como SQL Server Management Studio (SSMS) o el Explorador de objetos de SQL Server dentro de Visual Studio.
-
-\* La capacidad de la aplicación Mabup-v2021.2 para inicializar y conectarse a su base de datos local al ser ejecutada.
-
-
-
-\#### Verificación de Visual Studio 2022 Community
-
-
-
-Confirme la correcta instalación de Visual Studio 2022 Community mediante:
-
-
-
-\* Su listado en "Aplicaciones y características" de Windows.
-
-\* La capacidad de iniciar el IDE desde el menú de inicio y acceder a sus funcionalidades principales, incluyendo el Explorador de objetos de SQL Server si se instaló con el componente de desarrollo de datos.
-
-
-
-Con todas estas dependencias correctamente instaladas y verificadas, el entorno estará configurado adecuadamente para la implementación y ejecución de Mabup-v2021.2.
-
+With all these dependencies correctly installed and verified, the environment will be properly configured for the deployment and execution of Mabup-v2021.2.
