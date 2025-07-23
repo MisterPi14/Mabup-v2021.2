@@ -48,7 +48,7 @@ namespace Mabup2_Beta
                 endpoints.MapControllerRoute(
                     name: "default",
                 //pattern: "{controller=Gestor_Tareas}/{action=Gestor}/{id?}");
-                pattern: "{controller=Servicio_Stream}/{action=Panel_Materias}/{id?}");
+                pattern: "{controller=LogIn_y_Registro}/{action=LogIn}/{id?}");
                 //pattern: "{controller=LogIn_y_Registro}/{action=Ventana_Principal}/{id?}");
                 //pattern: "{controller=Servicio_Stream}/{action=Panel_Materias}/{id?}");
                 //pattern: "{controller=Foro_de_discusion}/{action=Buscar_Foro}/{id?}");
